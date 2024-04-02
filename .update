@@ -5,7 +5,6 @@ then
 	FAULT="$SOURCE"
 fi
 
-DCC="$FAULT/host/documentation"
 FCC="$FAULT/host/cc"
 PUBLISH="$(pwd)"
 
@@ -46,10 +45,7 @@ do
 		fcontext="$1"; shift 1
 		uid="$1"; shift 1
 
-		(cd "$SOURCE/$ldir"
-			x wkctl -W/x -X/x/canonical/host/cc delineate
-			x wkctl -W/x -X/x/canonical/host/documentation delineate
-		)
+		(cd "$SOURCE/$ldir" && x fictl -D/x -X"$FCC" delineate)
 
 		x \
 		fault fault-tool python \
