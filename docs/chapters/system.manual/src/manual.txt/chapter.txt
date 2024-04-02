@@ -2,4 +2,5 @@
 	/type/
 		factor
 	/element/
+		- (control)`property-set`
 		- (source/area)``
